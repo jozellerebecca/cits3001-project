@@ -2,12 +2,12 @@
 
 ## Team & Problems
 
-| Member | Problem |
-| ------ | ------- |
-| Jo     |         |
-|        |         |
-|        |         |
-|        |         |
+| Member  | Problem |
+| ------  | ------- |
+| Jo      |         |
+| Jennica |         |         
+|         |         |
+|         |         |
 
 ## Repo structure
 
