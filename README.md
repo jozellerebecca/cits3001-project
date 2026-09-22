@@ -2,12 +2,12 @@
 
 ## Team & Problems
 
-| Member  | Problem |
-| ------  | ------- |
-| Jo      |         |
-| Jennica |         |         
-| Seungjoo|         |
-|         |         |
+| Member   | Problem | Difficulty |
+| ------   | ------- | ---------- |
+| Jo       |         |            |
+| Jennica  |Assignment Scheduling (Greedy)| Easy–Medium |         
+| Seungjoo |Directed Broadcast Network (SCC/Kosaraju)|   Medium   |
+|          |         |            |
 
 ## Repo structure
 
