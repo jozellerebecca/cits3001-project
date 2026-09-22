@@ -7,7 +7,7 @@
 | Jo       |         |            |
 | Jennica  |Assignment Scheduling (Greedy)| Easy–Medium |         
 | Seungjoo |Directed Broadcast Network (SCC/Kosaraju)|   Medium   |
-|          |         |            |
+|arafat    | Dynamic programming    | medium           |
 
 ## Repo structure
 
