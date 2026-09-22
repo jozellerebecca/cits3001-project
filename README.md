@@ -6,7 +6,7 @@
 | ------  | ------- |
 | Jo      |         |
 | Jennica |         |         
-|         |         |
+| Seungjoo|         |
 |         |         |
 
 ## Repo structure
