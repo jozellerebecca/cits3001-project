@@ -2,12 +2,13 @@
 
 ## Team & Problems
 
-| Member   | Problem | Difficulty |
-| ------   | ------- | ---------- |
-| Jo       |         |            |
-| Jennica  |Assignment Scheduling (Greedy)| Easy–Medium |         
-| Seungjoo |Directed Broadcast Network (SCC/Kosaraju)|   Medium   |
-|arafat    | Dynamic programming    | medium           |
+| Member   | Problem                                   | Difficulty  |
+| -------- | ----------------------------------------- | ----------- |
+| Jo       | Flow                                      | Medium      |
+| Jennica  | Assignment Scheduling (Greedy)            | Easy–Medium |
+| Seungjoo | Directed Broadcast Network (SCC/Kosaraju) | Medium      |
+| arafat   | Dynamic programming                       | medium      |
+|          |                                           |             |
 
 ## Repo structure
 
