@@ -1,0 +1,31 @@
+\problemname{Wildfire Evacuation}
+
+A wildfire has broken out across a region with several towns. Each town has a
+number of people who need to evacuate, and each has to travel along a network
+of roads to reach one of several emergency shelters. Every road has a maximum 
+number of people who can travel along it, and every shelter has a maximum number 
+of people it can safely house. As the coordinator overseeing the evacuation, your 
+job is to figure out: what is the maximum number of people who can be moved to 
+safety, given these constraints?
+
+\section*{Input}
+Towns and shelters share one numbering scheme: towns are numbered
+$1$ to $T$, and shelters are numbered $T{+}1$ to $T{+}S$.
+
+\begin{itemize}
+\item The first line contains three integers $T$, $S$, $R$
+  ($1 \le T, S \le 200$, $1 \le R \le 2000$): the number of towns,
+  shelters, and roads.
+\item The second line contains $T$ integers $p_1, \dots, p_T$
+  ($0 \le p_i \le 10^9$): the number of people needing evacuation
+  from each town.
+\item The third line contains $S$ integers $c_1, \dots, c_S$
+  ($0 \le c_i \le 10^9$): the capacity of each shelter.
+\item Each of the next $R$ lines contains three integers $u$, $v$, $w$
+  ($1 \le u, v \le T+S$, $1 \le w \le 10^9$): a one-way road from
+  location $u$ to location $v$ with capacity $w$.
+\end{itemize}
+
+\section*{Output}
+Output a single integer: the maximum total number of people that can be
+evacuated to shelters.
