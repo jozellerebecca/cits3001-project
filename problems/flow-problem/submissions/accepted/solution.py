@@ -1,3 +1,5 @@
+from collections import deque
+
 def max_evacuated(T, S, p, c, roads):
     SOURCE, SINK = 0, T + S + 1
     caps = {}
