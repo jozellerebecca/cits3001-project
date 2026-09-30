@@ -1,4 +1,5 @@
 # if a user were to not include a super source, which is needed as max-flow algo assumes only one starting and ending point
+# but this problem has multiple sources (towns) and sinks (shelters)
 from collections import deque
 
 def max_evacuated(T, S, p, c, roads):
