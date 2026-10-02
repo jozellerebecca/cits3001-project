@@ -9,10 +9,13 @@ def max_evacuated(T, S, p, c, roads):
         caps.setdefault(u, {})
         caps[u][v] = caps[u].get(v, 0) + w
 
+    # super-source to each town: capacity is the town's population, so that no town can send out more people than it has
     for i in range(1, T + 1):
         add_edge(SOURCE, i, p[i - 1])
+    # this shows that each shelter is the super-sink. no shelter can take in more people than it can fit.
     for j in range(1, S + 1):
         add_edge(T + j, SINK, c[j - 1])
+    # this creates the onee-way roads: an edge from u to v that can carry at most w people
     for u, v, w in roads:
         add_edge(u, v, w)
 
@@ -20,13 +23,17 @@ def max_evacuated(T, S, p, c, roads):
 
 
 def ford_fulkerson(caps, s, t):
+    # from u->v to v-> u. reverse bc it let a later augmenting path undo flow sent earlier, which is how the algorithm reroutes people
     for u in list(caps):
         for v in list(caps[u]):
             caps.setdefault(v, {})
             if u not in caps[v]:
                 caps[v][u] = 0
+    # flows[u][v] holds the flow currently sent along u -> v; it starts at 0
     flows = {u: {v: 0 for v in caps[u]} for u in caps}
     flow = 0
+
+    # this keeps finding augmenting paths until none remain
     while True:
         path = find_augmenting_path(caps, flows, s, t)
         if path is None:
@@ -35,6 +42,7 @@ def ford_fulkerson(caps, s, t):
     return flow
 
 
+# uses BFS to find the shortest path from S to T using edges with spare capacity 
 def find_augmenting_path(caps, flows, s, t):
     parents = {s: s}
     queue = deque([s])
@@ -46,6 +54,8 @@ def find_augmenting_path(caps, flows, s, t):
                 queue.append(v)
     if t not in parents:
         return None
+
+    # Walk back from t to s using the parent links, then reverse the list so the path runs from s to t
     path = [t]
     while path[-1] != s:
         path.append(parents[path[-1]])
@@ -54,6 +64,7 @@ def find_augmenting_path(caps, flows, s, t):
 
 
 def push_flow(caps, flows, path):
+    #smallest spare capacity of any edge on the path
     bottleneck = float('inf')
     for u, v in zip(path, path[1:]):
         bottleneck = min(bottleneck, caps[u][v] - flows[u][v])
@@ -62,7 +73,7 @@ def push_flow(caps, flows, path):
         flows[v][u] -= bottleneck
     return bottleneck
 
-
+# Read the input: the counts, the town populations, the shelter capacities, then one line per road (start, end, capacity).
 T, S, R = map(int, input().split())
 p = list(map(int, input().split()))
 c = list(map(int, input().split()))

@@ -3,3 +3,8 @@ author: Jo Almero
 source: CITS3001 Group Project 2026
 license: unknown
 validation: default
+
+limits:
+  memory: 512
+  time_multiplier: 5
+  time_safety_margin: 2
