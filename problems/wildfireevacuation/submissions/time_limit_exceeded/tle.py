@@ -51,8 +51,7 @@ def find_augmenting_path(caps, flows, s, t):
     path.reverse()
     return path
 
-def push_flow(caps, flows, path):
-    # BUG: pushes a fixed 1 unit instead of the path's true bottleneck capacity
+def push_flow(caps, flows, path): #bug: pushes a fixed 1 unit instead of the path's true bottleneck capacity
     for u, v in zip(path, path[1:]):
         flows[u][v] += 1
         flows[v][u] -= 1
